@@ -5,7 +5,7 @@ set -euo pipefail
 
 createKeyProperties() {
 
-  local FILE_NAME="key.properties";
+  local FILE_NAME="android/key.properties";
   
   local KEYSTORE_FILE="$ANDROID_KEYSTORE";
   

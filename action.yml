@@ -1,4 +1,4 @@
-name: Generate a key.properties for building the apk or app bundle.
+name: jks-generator-action
 
 description: 'Github Action to write all the essentials keys for building an appbundle or apk'
 
