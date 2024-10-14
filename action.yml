@@ -1,0 +1,20 @@
+name: Generate a key.properties for building the apk or app bundle.
+
+description: 'Github Action to write all the essentials keys for building an appbundle or apk'
+
+inputs:
+  keystore_base64:
+    description: 'Base 64 of the file.'
+    required: true
+  keystore_password:
+    description: 'Keystore password'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: bash $GITHUB_ACTION_PATH/generate-key-properties.sh
+      shell: bash
+      env:
+        ANDROID_KEYSTORE: ${{ inputs.keystore_base64 }}
+        ANDROID_KEYSTORE_PASSWORD: ${{ inputs.keystore_password }}
