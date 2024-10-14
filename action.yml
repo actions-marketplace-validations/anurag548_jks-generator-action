@@ -2,6 +2,8 @@ name: jks-generator-action
 
 description: 'Github Action to write all the essentials keys for building an appbundle or apk'
 
+author: "Anurag Salian"
+
 inputs:
   keystore_base64:
     description: 'Base 64 of the file.'
