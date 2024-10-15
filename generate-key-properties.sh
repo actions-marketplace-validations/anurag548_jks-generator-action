@@ -5,13 +5,13 @@ set -euo pipefail
 
 createKeyProperties() {
 
-  local FILE_NAME="key.properties";
+  local FILE_NAME="key.properties"
   
-  local KEYSTORE_BASE64="$ANDROID_KEYSTORE_BASE64";
+  local KEYSTORE_BASE64="$ANDROID_KEYSTORE_BASE64"
 
-  local KEYSTORE_PASSWORD="$ANDROID_KEYSTORE_PASSWORD";
+  local KEYSTORE_PASSWORD="$ANDROID_KEYSTORE_PASSWORD"
 
-  local KEY_ALIAS="$ANDROID_KEYSTORE_ALIAS";
+  local KEY_ALIAS="$ANDROID_KEYSTORE_ALIAS"
 
   # SAVEIFS=$IFS       # Save current IFS (Internal Field Separator)
   # IFS=$'\n'          # Change IFS to newline char
@@ -28,7 +28,9 @@ createKeyProperties() {
   # done
 
   echo $KEYSTORE_BASE64 | base64 --decode > "release.jks"
+
   echo "releaseStorePassword=$KEYSTORE_PASSWORD\nreleaseKeyPassword=$KEYSTORE_PASSWORD\nreleaseKeyAlias=$KEY_ALIAS\nreleaseStoreFile=../release.jks" >> $FILE_NAME
+  
 }
 
 createKeyProperties
