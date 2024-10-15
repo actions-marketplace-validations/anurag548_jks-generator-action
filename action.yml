@@ -20,7 +20,8 @@ runs:
   steps:
     - run: bash $GITHUB_ACTION_PATH/generate-key-properties.sh
       shell: bash
+      working-directory: ./android
       env:
-        ANDROID_KEYSTORE: ${{ inputs.keystore_base64 }}
+        ANDROID_KEYSTORE_BASE64: ${{ inputs.keystore_base64 }}
         ANDROID_KEYSTORE_PASSWORD: ${{ inputs.keystore_password }}
         ANDROID_KEYSTORE_ALIAS: ${{ inputs.keystore_alias }}
