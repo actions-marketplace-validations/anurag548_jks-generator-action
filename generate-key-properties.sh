@@ -8,8 +8,10 @@ createKeyProperties() {
   local FILE_NAME="android/key.properties";
   
   local KEYSTORE_FILE="$ANDROID_KEYSTORE";
-  
-  local KEY_ALIAS="$ANDROID_KEY_ALIAS";
+
+  local KEYSTORE_PASSWORD="$ANDROID_KEYSTORE_PASSWORD";
+
+  local KEY_ALIAS="$ANDROID_KEYSTORE_ALIAS";
 
     
   # SAVEIFS=$IFS       # Save current IFS (Internal Field Separator)
@@ -25,7 +27,7 @@ createKeyProperties() {
   #   echo "KEY $i:${KEYS[$i]}"
   #   echo "VALUE $i:${VALUES[$i]}"
   # done
-  echo "releaseStorePassword=$KEYSTORE_PASSWORD\nreleaseKeyPassword=$KEY_PASSWORD\nreleaseKeyAlias=$KEY_ALIAS\nreleaseStoreFile=$KEYSTORE_FILE" >> $FILE_NAME
+  echo "releaseStorePassword=$KEYSTORE_PASSWORD\nreleaseKeyPassword=$KEYSTORE_PASSWORD\nreleaseKeyAlias=$KEY_ALIAS\nreleaseStoreFile=$KEYSTORE_FILE" >> $FILE_NAME
 }
 
 createKeyProperties

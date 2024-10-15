@@ -11,6 +11,9 @@ inputs:
   keystore_password:
     description: 'Keystore password'
     required: true
+  keystore_alias:
+    description: 'Alias for the keystore to be used'
+    required: true
 
 runs:
   using: "composite"
@@ -20,3 +23,4 @@ runs:
       env:
         ANDROID_KEYSTORE: ${{ inputs.keystore_base64 }}
         ANDROID_KEYSTORE_PASSWORD: ${{ inputs.keystore_password }}
+        ANDROID_KEYSTORE_ALIAS: ${{ inputs.keystore_alias }}
