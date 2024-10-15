@@ -28,7 +28,7 @@ createKeyProperties() {
   # done
 
   echo $KEYSTORE_BASE64 | base64 --decode > "release.jks"
-  echo "releaseStorePassword=$KEYSTORE_PASSWORD\nreleaseKeyPassword=$KEYSTORE_PASSWORD\nreleaseKeyAlias=$KEY_ALIAS\nreleaseStoreFile=$KEYSTORE_FILE" >> $FILE_NAME
+  echo "releaseStorePassword=$KEYSTORE_PASSWORD\nreleaseKeyPassword=$KEYSTORE_PASSWORD\nreleaseKeyAlias=$KEY_ALIAS\nreleaseStoreFile=../release.jks" >> $FILE_NAME
 }
 
 createKeyProperties
