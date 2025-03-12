@@ -31,6 +31,11 @@ createKeyProperties() {
 
   echo "releaseStorePassword=$KEYSTORE_PASSWORD\nreleaseKeyPassword=$KEYSTORE_PASSWORD\nreleaseKeyAlias=$KEY_ALIAS\nreleaseStoreFile=../release.jks" >> $FILE_NAME
   
+  echo "$(pwd)/release.jks" >> $ANDROID_KEYSTORE_PATH
+  echo $ANDROID_KEYSTORE_ALIAS >> $ANDROID_KEYSTORE_ALIAS
+  echo $ANDROID_KEYSTORE_PASSWORD >> $ANDROID_KEYSTORE_PASSWORD
+  echo $ANDROID_KEYSTORE_PASSWORD >> $ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD
+
 }
 
 createKeyProperties
